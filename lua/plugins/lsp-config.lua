@@ -24,11 +24,11 @@ return{
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
+			-- local lspconfig = require("lspconfig")
+			vim.lsp.config("lua_ls", {
 				capabilities = capabilities
 			})
-			lspconfig.clangd.setup({
+			vim.lsp.config("clangd", {
 				capabilities = capabilities,
 				cmd = {
 					"clangd",
@@ -40,34 +40,34 @@ return{
 				}
 
 			})
-			lspconfig.pylsp.setup({
+			vim.lsp.config("pylsp", {
 				capabilities = capabilities
 			})
-			lspconfig.html.setup({
+			vim.lsp.config("html", {
 				capabilities = capabilities
 			})
-			lspconfig.cssls.setup({
+			vim.lsp.config("cssls", {
 				capabilities = capabilities
 			})
-			lspconfig.eslint.setup({
+			vim.lsp.config("eslint", {
 				capabilities = capabilities
 			})
-			lspconfig.ast_grep.setup({
+			vim.lsp.config("ast_grep", {
 				capabilities = capabilities
 			})
 
-			vim.diagnostic.config({
-				virtual_text = true,
-				signs = true,
-				underline = true,
-				update_in_insert = false,
-				severity_sort = true,
-			})
+			-- vim.diagnostic.config({
+			-- 	virtual_text = false,
+			-- 	signs = true,
+			-- 	underline = true,
+			-- 	update_in_insert = false,
+			-- 	severity_sort = true,
+			-- })
 
 			--Key Mappings 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {}) --shift+k to show docm of the keyword under which is under the cursor 
 			vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {}) --gd to show doc of the keyword under which is under the cursor 
 			vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, {}) --space+ca to show doc of the keyword under which is under the cursor 
 		end
-	}
+	},
 }

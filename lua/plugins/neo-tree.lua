@@ -26,5 +26,6 @@ return{
 		})
 		--Neotree Keymappings
 		vim.keymap.set('n', '<M-b>', ':Neotree toggle right<CR>', {})
+		vim.keymap.set('n', '<M-f>', ':Neotree focus right<CR>', {})
 	end
 }
