@@ -9,12 +9,14 @@ return {
 			sources = {
 				--Lua
 				null_ls.builtins.formatting.stylua,
+
 				--JavaScript
 				null_ls.builtins.formatting.prettier,
-				require("none-ls.diagnostics.eslint_d"),
-				require("none-ls.code_actions.eslint_d"),
+				require("none-ls.code_actions.eslint"),
+
 				--Python
 				null_ls.builtins.formatting.black,
+
 				--C-lang/C++
 				null_ls.builtins.formatting.clang_format,
 			},

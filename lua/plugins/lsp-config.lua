@@ -16,6 +16,7 @@ return{
 					"html",
 					"cssls",
 					"eslint",
+					"ts_ls",
 				}
 			})
 		end
@@ -52,17 +53,12 @@ return{
 			vim.lsp.config("eslint", {
 				capabilities = capabilities
 			})
+			vim.lsp.config("ts_ls", {
+				capabilities = capabilities
+			})
 			vim.lsp.config("ast_grep", {
 				capabilities = capabilities
 			})
-
-			-- vim.diagnostic.config({
-			-- 	virtual_text = false,
-			-- 	signs = true,
-			-- 	underline = true,
-			-- 	update_in_insert = false,
-			-- 	severity_sort = true,
-			-- })
 
 			--Key Mappings 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {}) --shift+k to show docm of the keyword under which is under the cursor 
