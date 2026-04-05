@@ -22,6 +22,8 @@ return {
 				"vue",
 				"css",
 				"python",
+				"java",
+				"kotlin",
 			},
 			sync_install = false,
 			highlight = { enable = true },

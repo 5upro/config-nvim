@@ -17,6 +17,8 @@ return{
 					"cssls",
 					"eslint",
 					"ts_ls",
+					"jdtls",
+					"kotlin_language_server"
 				}
 			})
 		end
@@ -25,7 +27,7 @@ return{
 		"neovim/nvim-lspconfig",
 		config = function()
 			local capabilities = require('cmp_nvim_lsp').default_capabilities()
-			-- local lspconfig = require("lspconfig")
+
 			vim.lsp.config("lua_ls", {
 				capabilities = capabilities
 			})
@@ -56,8 +58,14 @@ return{
 			vim.lsp.config("ts_ls", {
 				capabilities = capabilities
 			})
-			vim.lsp.config("ast_grep", {
+			vim.lsp.config("jdtls", {
 				capabilities = capabilities
+			})
+			vim.lsp.config("kotlin_language_server", {
+				capabilities = capabilities,
+				root_dir = require('lspconfig.util').root_pattern(
+					"build.gradle", "settings.gradle", "pom.xml", ".git"
+				)
 			})
 
 			--Key Mappings 
