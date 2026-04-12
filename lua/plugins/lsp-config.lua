@@ -18,7 +18,8 @@ return{
 					"eslint",
 					"ts_ls",
 					"jdtls",
-					"kotlin_language_server"
+					"kotlin_language_server",
+					"sqls",
 				}
 			})
 		end
@@ -66,6 +67,9 @@ return{
 				root_dir = require('lspconfig.util').root_pattern(
 					"build.gradle", "settings.gradle", "pom.xml", ".git"
 				)
+			})
+			vim.lsp.config("sqls", {
+				capabilities = capabilities
 			})
 
 			--Key Mappings 
