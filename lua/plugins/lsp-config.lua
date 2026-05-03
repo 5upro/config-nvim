@@ -15,11 +15,10 @@ return{
 					"pylsp",
 					"html",
 					"cssls",
-					"eslint",
-					"ts_ls",
 					"jdtls",
 					"kotlin_language_server",
 					"sqls",
+					"tsgo"
 				}
 			})
 		end
@@ -53,10 +52,7 @@ return{
 			vim.lsp.config("cssls", {
 				capabilities = capabilities
 			})
-			vim.lsp.config("eslint", {
-				capabilities = capabilities
-			})
-			vim.lsp.config("ts_ls", {
+			vim.lsp.config("tsgo", {
 				capabilities = capabilities
 			})
 			vim.lsp.config("jdtls", {

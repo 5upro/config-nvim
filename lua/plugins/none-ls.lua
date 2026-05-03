@@ -12,7 +12,6 @@ return {
 
 				--JavaScript
 				null_ls.builtins.formatting.prettier,
-				require("none-ls.code_actions.eslint"),
 
 				--Python
 				null_ls.builtins.formatting.black,
