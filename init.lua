@@ -9,6 +9,9 @@ vim.cmd("set smarttab")
 vim.api.nvim_create_autocmd("BufReadPost", {
 	pattern = "*",
 	callback = function()
+		if vim.bo.buftype ~= "" then
+			return
+		end
 		vim.bo.fileformat = "unix"
 	end,
 })
