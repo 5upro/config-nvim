@@ -18,7 +18,8 @@ return{
 					"jdtls",
 					"kotlin_language_server",
 					"sqls",
-					"tsgo"
+					"tsgo",
+					"yamlls"
 				}
 			})
 		end
@@ -67,6 +68,9 @@ return{
 			vim.lsp.config("sqls", {
 				capabilities = capabilities
 			})
+            vim.lsp.config("yamlls", {
+                capabilities = capabilities
+            })
 
 			--Key Mappings 
 			vim.keymap.set('n', 'K', vim.lsp.buf.hover, {}) --shift+k to show docm of the keyword under which is under the cursor 
